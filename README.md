@@ -1,6 +1,6 @@
 # Apartment Rental System
 
-## System Requirements – Apartment Rental Brokers
+## System Requirements
 
 Design a system in which brokers can publish their apartments for rent.
 Each apartment ad must contain neighborhood, floor, category, image and price per
