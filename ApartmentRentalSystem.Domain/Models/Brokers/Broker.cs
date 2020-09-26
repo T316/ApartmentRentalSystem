@@ -1,10 +1,11 @@
-﻿namespace ApartmentRentalSystem.Domain.Models
+﻿namespace ApartmentRentalSystem.Domain.Models.Brokers
 {
     using System.Collections.Generic;
     using System.Linq;
 
     using Common;
     using Exceptions;
+    using Models.ApartmentAds;
     using static ModelConstants.Common;
 
     public class Broker : Entity<int>, IAggregateRoot
@@ -48,7 +49,7 @@
             return this;
         }
 
-        public IReadOnlyCollection<ApartmentAd> CarAds => this.apartmentAds.ToList().AsReadOnly();
+        public IReadOnlyCollection<ApartmentAd> ApartmentAds => this.apartmentAds.ToList().AsReadOnly();
 
         public void AddApartmentAd(ApartmentAd carAd)
         {

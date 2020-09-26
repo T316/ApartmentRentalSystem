@@ -1,4 +1,4 @@
-﻿namespace ApartmentRentalSystem.Domain.Models
+﻿namespace ApartmentRentalSystem.Domain.Models.ApartmentAds
 {
     using System.Collections.Generic;
     using System.Linq;

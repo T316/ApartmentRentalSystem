@@ -1,4 +1,4 @@
-﻿namespace ApartmentRentalSystem.Domain.Models
+﻿namespace ApartmentRentalSystem.Domain.Models.Brokers
 {
     using System.Text.RegularExpressions;
 

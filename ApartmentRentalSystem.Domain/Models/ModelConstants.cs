@@ -28,7 +28,7 @@
         public class ApartmentAd
         {
             public const int MinFloorLength = 1;
-            public const int MaxFloorLength = 30;
+            public const int MaxFloorLength = 50;
         }
     }
 }
