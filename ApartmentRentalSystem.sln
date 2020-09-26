@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentRentalSystem.Domain", "ApartmentRentalSystem.Domain\ApartmentRentalSystem.Domain.csproj", "{620F85A1-FAAB-44D4-9651-8C458D7C2BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentRentalSystem.Startup", "ApartmentRentalSystem.Startup\ApartmentRentalSystem.Startup.csproj", "{2E209FCD-BCC1-42BB-8CAA-2C0DCF4BD07C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentRentalSystem.Startup", "ApartmentRentalSystem.Startup\ApartmentRentalSystem.Startup.csproj", "{2E209FCD-BCC1-42BB-8CAA-2C0DCF4BD07C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentRentalSystem.Web", "ApartmentRentalSystem.Web\ApartmentRentalSystem.Web.csproj", "{AC4D7CD4-BA4E-45D1-BDE5-4C9F39297B26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentRentalSystem.Web", "ApartmentRentalSystem.Web\ApartmentRentalSystem.Web.csproj", "{AC4D7CD4-BA4E-45D1-BDE5-4C9F39297B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentRentalSystem.Infrastructure", "ApartmentRentalSystem.Infrastructure\ApartmentRentalSystem.Infrastructure.csproj", "{81BA1AED-8468-4A15-8A9F-9BB23209BB1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentRentalSystem.Infrastructure", "ApartmentRentalSystem.Infrastructure\ApartmentRentalSystem.Infrastructure.csproj", "{81BA1AED-8468-4A15-8A9F-9BB23209BB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentRentalSystem.Application", "ApartmentRentalSystem.Application\ApartmentRentalSystem.Application.csproj", "{717FF203-567E-495E-ABE5-F244239190BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{81BA1AED-8468-4A15-8A9F-9BB23209BB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81BA1AED-8468-4A15-8A9F-9BB23209BB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81BA1AED-8468-4A15-8A9F-9BB23209BB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717FF203-567E-495E-ABE5-F244239190BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717FF203-567E-495E-ABE5-F244239190BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717FF203-567E-495E-ABE5-F244239190BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717FF203-567E-495E-ABE5-F244239190BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

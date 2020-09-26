@@ -1,19 +1,24 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using ApartmentRentalSystem.Domain.Models.ApartmentAds;
-using ApartmentRentalSystem.Domain.Models.Brokers;
-using Microsoft.AspNetCore.Mvc;
-
-namespace ApartmentRentalSystem.Web.Features
+﻿namespace ApartmentRentalSystem.Web.Features
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using ApartmentRentalSystem.Application.Contracts;
+    using ApartmentRentalSystem.Domain.Models.ApartmentAds;
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("[controller]")]
     public class ApartmentAdController : ControllerBase
     {
-        private static readonly Broker Broker = new Broker("Broker", "+123456787");
+        private readonly IRepository<ApartmentAd> apartmentAd;
 
-        public IEnumerable<ApartmentAd> Get() 
-            => Broker.ApartmentAds.Where(a => a.IsAvailable);
+        public ApartmentAdController(IRepository<ApartmentAd> apartmentAd)
+            => this.apartmentAd = apartmentAd;
+
+        [HttpGet]
+        public IEnumerable<ApartmentAd> Get() => this.apartmentAd
+            .All()
+            .Where(a => a.IsAvailable);
     }
 }
