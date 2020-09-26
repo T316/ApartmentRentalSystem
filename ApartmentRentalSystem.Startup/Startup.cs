@@ -1,3 +1,4 @@
+using ApartmentRentalSystem.Infrastructure.Persistence.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -16,9 +17,10 @@ namespace ApartmentRentalSystem.Startup
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-        }
+            => services
+                .AddInfrastructure(this.Configuration)
+                .AddControllers();
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

@@ -133,8 +133,8 @@
         private void ValidateFloor(int floor)
             => Guard.AgainstOutOfRange<InvalidApartmentAdException>(
                 floor,
-                MinFloorLength,
-                MaxFloorLength,
+                MinFloor,
+                MaxFloor,
                 nameof(this.Floor));
 
         private void ValidateImageUrl(string imageUrl)
