@@ -12,7 +12,7 @@
     {
         private readonly HashSet<ApartmentAd> apartmentAds;
 
-        internal Broker(string name, string phoneNumber)
+        public Broker(string name, string phoneNumber)
         {
             this.Validate(name);
 
