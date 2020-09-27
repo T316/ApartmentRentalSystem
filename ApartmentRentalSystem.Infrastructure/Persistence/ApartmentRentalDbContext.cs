@@ -2,11 +2,13 @@
 
 using ApartmentRentalSystem.Domain.Models.ApartmentAds;
 using ApartmentRentalSystem.Domain.Models.Brokers;
+using ApartmentRentalSystem.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApartmentRentalSystem.Infrastructure.Persistence
 {
-    internal class ApartmentRentalDbContext : DbContext
+    internal class ApartmentRentalDbContext : IdentityDbContext<User>
     {
         public ApartmentRentalDbContext(DbContextOptions<ApartmentRentalDbContext> options)
             : base(options)

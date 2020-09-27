@@ -5,10 +5,10 @@
     using FluentAssertions;
     using Xunit;
 
-    public class DealerSpecs
+    public class BrokerSpecs
     {
         [Fact]
-        public void AddCarAdShouldSaveCarAd()
+        public void AddApartmentAdShouldSaveApartmentAd()
         {
             // Arrange
             var broker = new Broker("Valid broker", "+12345678");

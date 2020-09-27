@@ -4,7 +4,7 @@
     using FluentAssertions;
     using Xunit;
 
-    public class CarAdSpecs
+    public class ApartmentAdSpecs
     {
         [Fact]
         public void ChangeAvailabilityShouldMutateIsAvailable()

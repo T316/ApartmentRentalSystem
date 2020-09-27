@@ -51,11 +51,9 @@
 
         public IReadOnlyCollection<ApartmentAd> ApartmentAds => this.apartmentAds.ToList().AsReadOnly();
 
-        public void AddApartmentAd(ApartmentAd carAd)
+        public void AddApartmentAd(ApartmentAd apartmentAd)
         {
-            this.apartmentAds.Add(carAd);
-
-            //this.AddEvent(new CarAdAddedEvent());
+            this.apartmentAds.Add(apartmentAd);
         }
 
         private void Validate(string name)

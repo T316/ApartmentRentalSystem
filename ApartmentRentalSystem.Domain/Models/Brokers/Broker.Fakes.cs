@@ -26,9 +26,9 @@
                     .Generate()
                     .SetId(id);
 
-                foreach (var carAd in GetApartmentAds().Take(totalApartmentAds))
+                foreach (var apartmentAd in GetApartmentAds().Take(totalApartmentAds))
                 {
-                    broker.AddApartmentAd(carAd);
+                    broker.AddApartmentAd(apartmentAd);
                 }
 
                 return broker;

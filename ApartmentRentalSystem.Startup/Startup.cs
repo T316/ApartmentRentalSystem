@@ -1,4 +1,6 @@
+using ApartmentRentalSystem.Application;
 using ApartmentRentalSystem.Infrastructure.Persistence.Configurations;
+using ApartmentRentalSystem.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,9 +20,9 @@ namespace ApartmentRentalSystem.Startup
 
         public void ConfigureServices(IServiceCollection services)
             => services
+                .AddApplication(this.Configuration)
                 .AddInfrastructure(this.Configuration)
-                .AddControllers();
-
+                .AddWebComponents();
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -29,16 +31,14 @@ namespace ApartmentRentalSystem.Startup
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app
+                .UseHttpsRedirection()
+                .UseRouting()
+                .UseAuthentication()
+                .UseAuthorization()
+                .UseEndpoints(endpoints => endpoints
+                    .MapControllers())
+                .Initialize();
         }
     }
 }

@@ -16,6 +16,7 @@
                 .UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApartmentRentalDbContext).Assembly.FullName)))
+                .AddTransient<IInitializer, ApartmentRentalDbInitializer>()
                 .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
     }
 }
