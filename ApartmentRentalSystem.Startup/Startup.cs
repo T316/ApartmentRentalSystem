@@ -1,4 +1,5 @@
 using ApartmentRentalSystem.Application;
+using ApartmentRentalSystem.Domain;
 using ApartmentRentalSystem.Infrastructure.Persistence.Configurations;
 using ApartmentRentalSystem.Web;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +21,7 @@ namespace ApartmentRentalSystem.Startup
 
         public void ConfigureServices(IServiceCollection services)
             => services
+                .AddDomain()
                 .AddApplication(this.Configuration)
                 .AddInfrastructure(this.Configuration)
                 .AddWebComponents();
