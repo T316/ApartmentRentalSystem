@@ -1,14 +1,16 @@
 ﻿namespace ApartmentRentalSystem.Web.Features
 {
     using System.Threading.Tasks;
-    using Application.Contracts;
-    using Application.Features.Identity;
-    using Microsoft.AspNetCore.Authorization;
+
     using Microsoft.AspNetCore.Mvc;
+    using Application.Features.Identity;
+    using ApartmentRentalSystem.Application.Features.Identity.Commands.LoginUser;
+    using ApartmentRentalSystem.Web.Common;
+    using ApartmentRentalSystem.Application.Features.Identity.Commands.CreateUser;
 
     [ApiController]
     [Route("[controller]")]
-    public class IdentityController : ControllerBase
+    public class IdentityController : ApiController
     {
         private readonly IIdentity identity;
 
@@ -16,37 +18,12 @@
 
         [HttpPost]
         [Route(nameof(Register))]
-        public async Task<ActionResult> Register(UserInputModel model)
-        {
-            var result = await this.identity.Register(model);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
-
-            return Ok();
-        }
+        public async Task<ActionResult> Register(CreateUserCommand command)
+            => await this.Send(command);
 
         [HttpPost]
         [Route(nameof(Login))]
-        public async Task<ActionResult<LoginOutputModel>> Login(UserInputModel model)
-        {
-            var result = await this.identity.Login(model);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
-
-            return result.Data;
-        }
-
-        [HttpGet]
-        [Authorize]
-        public IActionResult Get()
-        {
-            return this.Ok(this.User.Identity.Name);
-        }
+        public async Task<ActionResult<LoginOutputModel>> Login(LoginUserCommand command)
+            => await this.Send(command);
     }
 }

@@ -13,6 +13,7 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
+    using ApartmentRentalSystem.Application.Features.Identity.Commands.LoginUser;
 
     public class IdentityService : IIdentity
     {

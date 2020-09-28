@@ -1,36 +1,18 @@
 ﻿namespace ApartmentRentalSystem.Web.Features
 {
-    using System.Linq;
+    using System.Threading.Tasks;
 
-    using ApartmentRentalSystem.Application;
-    using ApartmentRentalSystem.Application.Contracts;
-    using ApartmentRentalSystem.Domain.Models.ApartmentAds;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Options;
+
+    using ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search;
 
     [ApiController]
     [Route("[controller]")]
-    public class ApartmentAdController : ControllerBase
+    public class ApartmentAdController : ApiController
     {
-        private readonly IRepository<ApartmentAd> apartmentAd;
-        private readonly IOptions<ApplicationSettings> settings;
-
-        public ApartmentAdController(
-            IRepository<ApartmentAd> apartmentAd,
-            IOptions<ApplicationSettings> settings)
-        {
-            this.apartmentAd = apartmentAd;
-            this.settings = settings;
-        }
-
         [HttpGet]
-        public object Get() => new
-        {
-            Settings = this.settings,
-            ApartmentAds = this.apartmentAd
-                .All()
-                .Where(a => a.IsAvailable)
-                .ToList()
-        };
+        public async Task<ActionResult<SearchApartmentAdsOutputModel>> Get(
+            [FromQuery] SearchApartmentAdsQuery query)
+            => await this.Send(query);
     }
 }

@@ -7,7 +7,7 @@
     using ApartmentRentalSystem.Application.Contracts;
     using ApartmentRentalSystem.Domain.Common;
 
-    internal class DataRepository<TEntity> : IRepository<TEntity>
+    internal abstract class DataRepository<TEntity> : IRepository<TEntity>
         where TEntity : class, IAggregateRoot
     {
         private readonly ApartmentRentalDbContext db;

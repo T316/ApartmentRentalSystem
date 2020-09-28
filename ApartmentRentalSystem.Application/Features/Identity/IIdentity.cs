@@ -1,8 +1,8 @@
-﻿namespace ApartmentRentalSystem.Application.Contracts
+﻿namespace ApartmentRentalSystem.Application.Features.Identity
 {
     using System.Threading.Tasks;
 
-    using ApartmentRentalSystem.Application.Features.Identity;
+    using ApartmentRentalSystem.Application.Features.Identity.Commands.LoginUser;
 
     public interface IIdentity
     {
