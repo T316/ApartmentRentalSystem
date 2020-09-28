@@ -10,7 +10,7 @@
             public bool CanCreate(Type type) => type == typeof(Neighborhood);
 
             public object? Create(Type type)
-                => new Neighborhood("Valid Neighborhood");
+                => new Neighborhood("Valid neighborhood");
 
             public Priority Priority => Priority.Default;
         }

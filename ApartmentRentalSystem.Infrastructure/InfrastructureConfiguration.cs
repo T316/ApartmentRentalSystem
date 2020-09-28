@@ -1,17 +1,17 @@
 ﻿namespace ApartmentRentalSystem.Infrastructure
 {
     using System.Text;
-
+    using ApartmentRentalSystem.Infrastructure.Persistence.Repositories;
+    using Application;
+    using Application.Contracts;
+    using Application.Features.Identity;
+    using Identity;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
-    using ApartmentRentalSystem.Application.Features.Identity;
-    using Application;
-    using Application.Contracts;
-    using Identity;
     using Persistence;
 
     public static class InfrastructureConfiguration
@@ -85,6 +85,7 @@
                 });
 
             services.AddTransient<IIdentity, IdentityService>();
+            services.AddTransient<IJwtTokenGenerator, JwtTokenGeneratorService>();
 
             return services;
         }

@@ -8,7 +8,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
 
-
     public abstract class ApiController : ControllerBase
     {
         private IMediator? mediator;

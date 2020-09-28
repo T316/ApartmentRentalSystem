@@ -3,7 +3,6 @@
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
-
     using ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search;
 
     [ApiController]
