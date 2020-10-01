@@ -1,7 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Startup.Specs
 {
     using System.Linq;
-
+    using ApartmentRentalSystem.Domain.Models.Brokers;
     using Application.Features.ApartmentAds.Queries.Search;
     using Domain.Models.ApartmentAds;
     using FakeItEasy;
@@ -14,7 +14,7 @@
     {
         [Fact]
         public void GetShouldHaveCorrectAttributes()
-            => MyController<ApartmentAdController>
+            => MyController<ApartmentAdsController>
                 .Calling(c => c.Get(With.Default<SearchApartmentAdsQuery>()))
 
                 .ShouldHave()
@@ -23,14 +23,14 @@
 
         [Theory]
         [InlineData(2)]
-        public void GetShouldReturnAllApartmentAdsWithoutAQuery(int totalApartmentAds)
+        public void SearchShouldReturnAllCarAdsWithoutAQuery(int totalApartmentAds)
             => MyPipeline
                 .Configuration()
                 .ShouldMap("/ApartmentAds")
 
-                .To<ApartmentAdController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
+                .To<ApartmentAdsController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
                 .Which(instance => instance
-                    .WithData(A.CollectionOfDummy<ApartmentAd>(totalApartmentAds)))
+                    .WithData(BrokerFakes.Data.GetBroker(totalApartmentAds: totalApartmentAds)))
 
                 .ShouldReturn()
                 .ActionResult<SearchApartmentAdsOutputModel>(result => result
@@ -43,7 +43,7 @@
                 .Configuration()
                 .ShouldMap("/ApartmentAds")
 
-                .To<ApartmentAdController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
+                .To<ApartmentAdsController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
                 .Which(instance => instance
                     .WithData(ApartmentAdFakes.Data.GetApartmentAds()))
 
@@ -59,7 +59,7 @@
                 .Configuration()
                 .ShouldMap($"/ApartmentAds?{nameof(neighborhood)}={neighborhood}")
 
-                .To<ApartmentAdController>(c => c.Get(new SearchApartmentAdsQuery { Neighborhood = neighborhood }))
+                .To<ApartmentAdsController>(c => c.Get(new SearchApartmentAdsQuery { Neighborhood = neighborhood }))
                 .Which(instance => instance
                     .WithData(ApartmentAdFakes.Data.GetApartmentAds()))
 

@@ -5,7 +5,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Application.Features.Identity;
     using ApartmentRentalSystem.Application.Features.Identity.Commands.LoginUser;
-    using ApartmentRentalSystem.Web.Common;
     using ApartmentRentalSystem.Application.Features.Identity.Commands.CreateUser;
 
     [ApiController]

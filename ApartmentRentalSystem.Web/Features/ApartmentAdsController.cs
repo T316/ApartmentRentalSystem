@@ -7,7 +7,7 @@
 
     [ApiController]
     [Route("[controller]")]
-    public class ApartmentAdController : ApiController
+    public class ApartmentAdsController : ApiController
     {
         [HttpGet]
         public async Task<ActionResult<SearchApartmentAdsOutputModel>> Get(

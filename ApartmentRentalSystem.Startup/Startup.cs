@@ -1,6 +1,6 @@
 using ApartmentRentalSystem.Application;
 using ApartmentRentalSystem.Domain;
-using ApartmentRentalSystem.Infrastructure.Persistence.Configurations;
+using ApartmentRentalSystem.Infrastructure;
 using ApartmentRentalSystem.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
