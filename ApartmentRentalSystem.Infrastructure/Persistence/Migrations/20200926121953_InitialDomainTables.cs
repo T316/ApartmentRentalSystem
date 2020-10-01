@@ -60,7 +60,7 @@ namespace ApartmentRentalSystem.Infrastructure.Persistence.Migrations
                     pricePerMonth = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Options_HasParking = table.Column<bool>(nullable: true),
                     Options_HasBasement = table.Column<bool>(nullable: true),
-                    Options_HheatingType_Value = table.Column<int>(nullable: true),
+                    Options_HeatingType_Value = table.Column<int>(nullable: true),
                     IsAvailable = table.Column<bool>(nullable: false),
                     BrokerId = table.Column<int>(nullable: true)
                 },

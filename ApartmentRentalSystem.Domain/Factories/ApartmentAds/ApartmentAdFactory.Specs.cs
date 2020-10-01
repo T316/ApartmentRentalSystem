@@ -17,7 +17,7 @@
             // Act
             Action act = () => apartmentAdFactory
                 .WithCategory("TestCategory", "TestDescription")
-                .WithOptions(true, true, HheatingType.Еlectricity)
+                .WithOptions(true, true, HeatingType.Еlectricity)
                 .Build();
 
             // Assert
@@ -33,7 +33,7 @@
             // Act
             Action act = () => apartmentAdFactory
                 .WithNeighborhood("TestNeighborhood")
-                .WithOptions(true, true, HheatingType.Еlectricity)
+                .WithOptions(true, true, HeatingType.Еlectricity)
                 .Build();
 
             // Assert
@@ -66,7 +66,7 @@
             var apartmentAd = apartmentAdFactory
                 .WithNeighborhood("TestNeighborhood")
                 .WithCategory(CategoryFakes.ValidCategoryName, "TestCategoryDescription")
-                .WithOptions(true, true, HheatingType.Еlectricity)
+                .WithOptions(true, true, HeatingType.Еlectricity)
                 .WithImageUrl("http://test.image.url")
                 .WithFloor(10)
                 .WithPricePerMonth(1000)

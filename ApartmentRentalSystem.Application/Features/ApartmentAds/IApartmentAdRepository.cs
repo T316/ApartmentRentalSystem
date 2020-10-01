@@ -13,6 +13,14 @@
             string? neighborhood = default,
             CancellationToken cancellationToken = default);
 
+        Task<Category> GetCategory(
+            int categoryId,
+            CancellationToken cancellationToken = default);
+
+        Task<Neighborhood> GetNeighborhood(
+            string neighborhood,
+            CancellationToken cancellationToken = default);
+
         Task<int> Total(CancellationToken cancellationToken = default);
     }
 }

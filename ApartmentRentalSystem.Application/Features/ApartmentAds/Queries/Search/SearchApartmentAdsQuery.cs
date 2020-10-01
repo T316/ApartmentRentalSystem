@@ -9,13 +9,13 @@
     {
         public string? Neighborhood { get; set; }
 
-        public class SearchCarAdsQueryHandler : IRequestHandler<
+        public class SearchApartmentAdsQueryHandler : IRequestHandler<
             SearchApartmentAdsQuery,
             SearchApartmentAdsOutputModel>
         {
             private readonly IApartmentAdRepository apartmentAdRepository;
 
-            public SearchCarAdsQueryHandler(IApartmentAdRepository apartmentAdRepository)
+            public SearchApartmentAdsQueryHandler(IApartmentAdRepository apartmentAdRepository)
                 => this.apartmentAdRepository = apartmentAdRepository;
 
             public async Task<SearchApartmentAdsOutputModel> Handle

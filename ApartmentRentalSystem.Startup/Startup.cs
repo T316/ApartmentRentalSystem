@@ -2,6 +2,7 @@ using ApartmentRentalSystem.Application;
 using ApartmentRentalSystem.Domain;
 using ApartmentRentalSystem.Infrastructure;
 using ApartmentRentalSystem.Web;
+using ApartmentRentalSystem.Web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -34,6 +35,7 @@ namespace ApartmentRentalSystem.Startup
             }
 
             app
+                .UseValidationExceptionHandler()
                 .UseHttpsRedirection()
                 .UseRouting()
                 .UseAuthentication()

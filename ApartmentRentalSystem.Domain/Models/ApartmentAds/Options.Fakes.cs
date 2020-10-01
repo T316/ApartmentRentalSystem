@@ -10,7 +10,7 @@
             public bool CanCreate(Type type) => type == typeof(Options);
 
             public object? Create(Type type)
-                => new Options(true, true, HheatingType.Еlectricity);
+                => new Options(true, true, HeatingType.Еlectricity);
 
             public Priority Priority => Priority.Default;
         }

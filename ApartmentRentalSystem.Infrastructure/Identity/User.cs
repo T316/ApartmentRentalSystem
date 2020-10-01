@@ -1,10 +1,11 @@
 ﻿namespace ApartmentRentalSystem.Infrastructure.Identity
 {
+    using ApartmentRentalSystem.Application.Features.Identity;
     using ApartmentRentalSystem.Domain.Exceptions;
     using ApartmentRentalSystem.Domain.Models.Brokers;
     using Microsoft.AspNetCore.Identity;
 
-    public class User : IdentityUser
+    public class User : IdentityUser, IUser
     {
         internal User(string email)
             : base(email) => this.Email = email;

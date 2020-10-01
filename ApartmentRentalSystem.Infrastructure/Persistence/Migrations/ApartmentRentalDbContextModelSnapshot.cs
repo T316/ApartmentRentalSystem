@@ -358,7 +358,7 @@ namespace ApartmentRentalSystem.Infrastructure.Persistence.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("ApartmentAdId");
 
-                            b1.OwnsOne("ApartmentRentalSystem.Domain.Models.ApartmentAds.HheatingType", "HheatingType", b2 =>
+                            b1.OwnsOne("ApartmentRentalSystem.Domain.Models.ApartmentAds.HeatingType", "HeatingType", b2 =>
                                 {
                                     b2.Property<int>("OptionsApartmentAdId")
                                         .ValueGeneratedOnAdd()

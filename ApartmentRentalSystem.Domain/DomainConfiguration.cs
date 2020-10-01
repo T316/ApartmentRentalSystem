@@ -1,6 +1,8 @@
 ﻿namespace ApartmentRentalSystem.Domain
 {
+    using ApartmentRentalSystem.Domain.Common;
     using ApartmentRentalSystem.Domain.Factories;
+    using ApartmentRentalSystem.Domain.Models.ApartmentAds;
     using Microsoft.Extensions.DependencyInjection;
 
     public static class DomainConfiguration
@@ -12,6 +14,7 @@
                     .AddClasses(classes => classes
                         .AssignableTo(typeof(IFactory<>)))
                     .AsMatchingInterface()
-                    .WithTransientLifetime());
+                    .WithTransientLifetime())
+            .AddTransient<IInitialData, CategoryData>();
     }
 }

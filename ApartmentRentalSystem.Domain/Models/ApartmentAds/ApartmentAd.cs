@@ -109,9 +109,9 @@
         public ApartmentAd UpdateOptions(
             bool hasParking,
             bool hasBasement,
-            HheatingType hheatingType)
+            HeatingType heatingType)
         {
-            this.Options = new Options(hasParking, hasBasement, hheatingType);
+            this.Options = new Options(hasParking, hasBasement, heatingType);
 
             return this;
         }

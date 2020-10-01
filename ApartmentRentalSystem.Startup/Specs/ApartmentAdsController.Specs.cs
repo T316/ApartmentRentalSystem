@@ -15,7 +15,7 @@
         [Fact]
         public void GetShouldHaveCorrectAttributes()
             => MyController<ApartmentAdsController>
-                .Calling(c => c.Get(With.Default<SearchApartmentAdsQuery>()))
+                .Calling(c => c.Search(With.Default<SearchApartmentAdsQuery>()))
 
                 .ShouldHave()
                 .ActionAttributes(attr => attr
@@ -23,12 +23,12 @@
 
         [Theory]
         [InlineData(2)]
-        public void SearchShouldReturnAllCarAdsWithoutAQuery(int totalApartmentAds)
+        public void SearchShouldReturnAllApartmentAdsWithoutAQuery(int totalApartmentAds)
             => MyPipeline
                 .Configuration()
                 .ShouldMap("/ApartmentAds")
 
-                .To<ApartmentAdsController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
+                .To<ApartmentAdsController>(c => c.Search(With.Empty<SearchApartmentAdsQuery>()))
                 .Which(instance => instance
                     .WithData(BrokerFakes.Data.GetBroker(totalApartmentAds: totalApartmentAds)))
 
@@ -43,7 +43,7 @@
                 .Configuration()
                 .ShouldMap("/ApartmentAds")
 
-                .To<ApartmentAdsController>(c => c.Get(With.Empty<SearchApartmentAdsQuery>()))
+                .To<ApartmentAdsController>(c => c.Search(With.Empty<SearchApartmentAdsQuery>()))
                 .Which(instance => instance
                     .WithData(ApartmentAdFakes.Data.GetApartmentAds()))
 
@@ -59,7 +59,7 @@
                 .Configuration()
                 .ShouldMap($"/ApartmentAds?{nameof(neighborhood)}={neighborhood}")
 
-                .To<ApartmentAdsController>(c => c.Get(new SearchApartmentAdsQuery { Neighborhood = neighborhood }))
+                .To<ApartmentAdsController>(c => c.Search(new SearchApartmentAdsQuery { Neighborhood = neighborhood }))
                 .Which(instance => instance
                     .WithData(ApartmentAdFakes.Data.GetApartmentAds()))
 

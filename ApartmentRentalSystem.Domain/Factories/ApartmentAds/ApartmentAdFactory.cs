@@ -54,8 +54,8 @@
             return this;
         }
 
-        public IApartmentAdFactory WithOptions(bool hasParking, bool hasBasement, HheatingType HheatingType)
-            => this.WithOptions(new Options(hasParking, hasBasement, HheatingType));
+        public IApartmentAdFactory WithOptions(bool hasParking, bool hasBasement, HeatingType heatingType)
+            => this.WithOptions(new Options(hasParking, hasBasement, heatingType));
 
         public IApartmentAdFactory WithOptions(Options options)
         {

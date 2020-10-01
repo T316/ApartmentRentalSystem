@@ -14,7 +14,7 @@
         public void RegisterShouldHaveCorrectAttributes()
             => MyController<IdentityController>
                 .Calling(c => c
-                    .Register(new CreateUserCommand(With.No<string>(), With.No<string>())))
+                    .Register(CreateUserCommandFakes.Data.GetCommand()))
 
                 .ShouldHave()
                 .ActionAttributes(attr => attr

@@ -10,8 +10,8 @@
         public void ValueObjectsWithEqualPropertiesShouldBeEqual()
         {
             // Arrange
-            var first = new Options(true, true, HheatingType.Fireplace);
-            var second = new Options(true, true, HheatingType.Fireplace);
+            var first = new Options(true, true, HeatingType.Fireplace);
+            var second = new Options(true, true, HeatingType.Fireplace);
 
             // Act
             var result = first == second;
@@ -24,8 +24,8 @@
         public void ValueObjectsWithDifferentPropertiesShouldNotBeEqual()
         {
             // Arrange
-            var first = new Options(true, true, HheatingType.Еlectricity);
-            var second = new Options(true, true, HheatingType.Fireplace);
+            var first = new Options(true, true, HeatingType.Еlectricity);
+            var second = new Options(true, true, HeatingType.Fireplace);
 
             // Act
             var result = first == second;

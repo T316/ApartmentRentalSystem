@@ -53,7 +53,7 @@
                     o.Property(op => op.HasBasement);
 
                     o.OwnsOne(
-                        op => op.HheatingType,
+                        op => op.HeatingType,
                         h =>
                         {
                             h.WithOwner();

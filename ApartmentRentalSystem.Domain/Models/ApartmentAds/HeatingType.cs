@@ -2,17 +2,17 @@
 {
     using Common;
 
-    public class HheatingType : Enumeration
+    public class HeatingType : Enumeration
     {
-        public static readonly HheatingType Еlectricity = new HheatingType(1, nameof(Еlectricity));
-        public static readonly HheatingType Fireplace = new HheatingType(2, nameof(Fireplace));
+        public static readonly HeatingType Еlectricity = new HeatingType(1, nameof(Еlectricity));
+        public static readonly HeatingType Fireplace = new HeatingType(2, nameof(Fireplace));
 
-        private HheatingType(int value)
-            : this(value, FromValue<HheatingType>(value).Name)
+        private HeatingType(int value)
+            : this(value, FromValue<HeatingType>(value).Name)
         {
         }
 
-        private HheatingType(int value, string name) 
+        private HeatingType(int value, string name) 
             : base(value, name)
         {
         }

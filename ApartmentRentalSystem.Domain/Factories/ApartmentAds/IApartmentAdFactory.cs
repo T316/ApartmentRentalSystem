@@ -21,6 +21,6 @@
         IApartmentAdFactory WithOptions(
             bool hasParking, 
             bool hasBasement,
-            HheatingType hheatingType);
+            HeatingType heatingType);
     }
 }

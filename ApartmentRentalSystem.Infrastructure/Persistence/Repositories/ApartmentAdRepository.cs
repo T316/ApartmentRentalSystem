@@ -42,6 +42,22 @@
                 .ToListAsync(cancellationToken);
         }
 
+        public async Task<Category> GetCategory(
+            int categoryId,
+            CancellationToken cancellationToken = default)
+            => await this
+                .Data
+                .Categories
+                .FirstOrDefaultAsync(c => c.Id == categoryId, cancellationToken);
+
+        public async Task<Neighborhood> GetNeighborhood(
+            string neighborhood,
+            CancellationToken cancellationToken = default)
+            => await this
+                .Data
+                .Neighborhoods
+                .FirstOrDefaultAsync(m => m.Name == neighborhood, cancellationToken);
+
         public async Task<int> Total(CancellationToken cancellationToken = default)
             => await this
                 .AllAvailable()
