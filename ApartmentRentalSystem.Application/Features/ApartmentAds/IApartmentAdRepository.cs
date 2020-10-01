@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+    using ApartmentRentalSystem.Domain.Specifications;
     using Contracts;
     using Domain.Models.ApartmentAds;
     using Queries.Search;
@@ -10,7 +11,7 @@
     public interface IApartmentAdRepository : IRepository<ApartmentAd>
     {
         Task<IEnumerable<ApartmentAdListingModel>> GetApartmentAdListings(
-            string? neighborhood = default,
+            Specification<ApartmentAd> spefication,
             CancellationToken cancellationToken = default);
 
         Task<Category> GetCategory(

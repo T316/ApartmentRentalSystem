@@ -1,33 +1,29 @@
-﻿namespace ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search
+﻿using ApartmentRentalSystem.Application.Mapping;
+using ApartmentRentalSystem.Domain.Models.ApartmentAds;
+using AutoMapper;
+
+namespace ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search
 {
-    public class ApartmentAdListingModel
+    public class ApartmentAdListingModel : IMapFrom<ApartmentAd>
     {
-        public ApartmentAdListingModel(
-            int id, 
-            string neighborhood,
-            int floor,
-            string imageUrl,
-            string category, 
-            decimal pricePerMonth)
-        {
-            this.Id = id;
-            this.Neighborhood = neighborhood;
-            this.Floor = floor;
-            this.ImageUrl = imageUrl;
-            this.Category = category;
-            this.PricePerMonth = pricePerMonth;
-        }
+        public int Id { get; private set; }
 
-        public int Id { get; }
+        public string Neighborhood { get; private set; } = default!;
 
-        public string Neighborhood { get; }
+        public int Floor { get; private set; }
 
-        public int Floor { get; }
+        public string ImageUrl { get; private set; } = default!;
 
-        public string ImageUrl { get; }
+        public string Category { get; private set; } = default!;
 
-        public string Category { get; }
+        public decimal PricePerMonth { get; private set; }
 
-        public decimal PricePerMonth { get; }
+        public void Mapping(Profile mapper)
+            => mapper
+                .CreateMap<ApartmentAd, ApartmentAdListingModel>()
+                .ForMember(ad => ad.Neighborhood, cfg => cfg
+                    .MapFrom(ad => ad.Neighborhood.Name))
+                .ForMember(ad => ad.Category, cfg => cfg
+                    .MapFrom(ad => ad.Category.Name));
     }
 }

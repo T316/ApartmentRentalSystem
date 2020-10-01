@@ -29,7 +29,7 @@
             this.Floor = floor;
             this.Category = category;
             this.ImageUrl = imageUrl;
-            this.pricePerMonth = pricePerMonth;
+            this.PricePerMonth = pricePerMonth;
             this.Options = options;
             this.IsAvailable = isAvailable;
         }
@@ -42,7 +42,7 @@
         {
             this.Floor = floor;
             this.ImageUrl = imageUrl;
-            this.pricePerMonth = pricePerMonth;
+            this.PricePerMonth = pricePerMonth;
             this.IsAvailable = isAvailable;
 
             this.Neighborhood = default!;
@@ -58,7 +58,7 @@
 
         public string ImageUrl { get; private set; }
 
-        public decimal pricePerMonth { get; private set; }
+        public decimal PricePerMonth { get; private set; }
 
         public Options Options { get; private set; }
 
@@ -101,7 +101,7 @@
         public ApartmentAd UpdatepricePerMonth(decimal pricePerMonth)
         {
             this.ValidatepricePerMonth(pricePerMonth);
-            this.pricePerMonth = pricePerMonth;
+            this.PricePerMonth = pricePerMonth;
 
             return this;
         }
@@ -147,7 +147,7 @@
                 pricePerMonth,
                 Zero,
                 decimal.MaxValue,
-                nameof(this.pricePerMonth));
+                nameof(this.PricePerMonth));
 
         private void ValidateCategory(Category category)
         {

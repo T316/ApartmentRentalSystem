@@ -9,38 +9,25 @@
     using Application.Features.ApartmentAds;
     using Application.Features.ApartmentAds.Queries.Search;
     using Domain.Models.ApartmentAds;
+    using AutoMapper;
+    using ApartmentRentalSystem.Domain.Specifications;
 
     internal class ApartmentAdRepository : DataRepository<ApartmentAd>, IApartmentAdRepository
     {
-        public ApartmentAdRepository(ApartmentRentalDbContext db)
+        private readonly IMapper mapper;
+
+        public ApartmentAdRepository(ApartmentRentalDbContext db, IMapper mapper)
             : base(db)
-        {
-        }
+            => this.mapper = mapper;
 
         public async Task<IEnumerable<ApartmentAdListingModel>> GetApartmentAdListings(
-            string? neighborhood = default,
+            Specification<ApartmentAd> specification,
             CancellationToken cancellationToken = default)
-        {
-            var query = this.AllAvailable();
-
-            if (!string.IsNullOrWhiteSpace(neighborhood))
-            {
-                query = query
-                    .Where(apartment => EF
-                        .Functions
-                        .Like(apartment.Neighborhood.Name, $"%{neighborhood}%"));
-            }
-
-            return await query
-                .Select(apartment => new ApartmentAdListingModel(
-                    apartment.Id,
-                    apartment.Neighborhood.Name,
-                    apartment.Floor,
-                    apartment.ImageUrl,
-                    apartment.Category.Name,
-                    apartment.pricePerMonth))
-                .ToListAsync(cancellationToken);
-        }
+                => await this.mapper
+                    .ProjectTo<ApartmentAdListingModel>(this
+                        .AllAvailable()
+                    .Where(specification))
+                    .ToListAsync(cancellationToken);
 
         public async Task<Category> GetCategory(
             int categoryId,

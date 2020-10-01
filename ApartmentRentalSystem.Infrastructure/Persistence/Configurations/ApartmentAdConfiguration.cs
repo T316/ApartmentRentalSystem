@@ -24,7 +24,7 @@
                 .HasMaxLength(MaxUrlLength);
 
             builder
-                .Property(a => a.pricePerMonth)
+                .Property(a => a.PricePerMonth)
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");
 
