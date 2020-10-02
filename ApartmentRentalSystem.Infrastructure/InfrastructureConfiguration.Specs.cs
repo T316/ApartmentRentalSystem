@@ -2,9 +2,12 @@
 {
     using System;
     using System.Reflection;
+
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
+    using ApartmentRentalSystem.Infrastructure.Rental;
     using Application.Features.ApartmentAds;
     using AutoMapper;
+    using FakeItEasy;
     using FluentAssertions;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +21,8 @@
             // Arrange
             var serviceCollection = new ServiceCollection()
                 .AddDbContext<ApartmentRentalDbContext>(opts => opts
-                    .UseInMemoryDatabase(Guid.NewGuid().ToString()));
+                    .UseInMemoryDatabase(Guid.NewGuid().ToString()))
+                .AddTransient(_ => A.Fake<IRentalDbContext>());
 
             // Act
             var services = serviceCollection

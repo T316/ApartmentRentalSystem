@@ -31,8 +31,4 @@
     <ProjectReference Include="..\ApartmentRentalSystem.Application\ApartmentRentalSystem.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Statistics\" />
-  </ItemGroup>
-
 </Project>

@@ -5,7 +5,10 @@
     using ApartmentRentalSystem.Application.Common;
     using ApartmentRentalSystem.Application.Common.Contracts;
     using ApartmentRentalSystem.Application.Identity;
+    using ApartmentRentalSystem.Infrastructure.Common;
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
+    using ApartmentRentalSystem.Infrastructure.Rental;
+    using ApartmentRentalSystem.Infrastructure.Statistics;
     using Identity;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Identity;
@@ -31,8 +34,10 @@
                 .AddDbContext<ApartmentRentalDbContext>(options => options
                     .UseSqlServer(
                         configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(ApartmentRentalDbContext)
-                            .Assembly.FullName)))
+                        b => b
+                        .MigrationsAssembly(typeof(ApartmentRentalDbContext).Assembly.FullName)))
+                .AddScoped<IRentalDbContext>(provider => provider.GetService<ApartmentRentalDbContext>())
+                .AddScoped<IStatisticsDbContext>(provider => provider.GetService<ApartmentRentalDbContext>())
                 .AddTransient<IInitializer, ApartmentRentalDbInitializer>();
 
         internal static IServiceCollection AddRepositories(this IServiceCollection services)

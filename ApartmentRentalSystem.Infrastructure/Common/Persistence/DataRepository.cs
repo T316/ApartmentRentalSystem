@@ -3,25 +3,27 @@
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+
     using ApartmentRentalSystem.Application.Common.Contracts;
     using ApartmentRentalSystem.Domain.Common;
 
-    internal abstract class DataRepository<TEntity> : IRepository<TEntity>
+    internal abstract class DataRepository<TDbContext, TEntity> : IRepository<TEntity>
+        where TDbContext : IDbContext
         where TEntity : class, IAggregateRoot
     {
-        public DataRepository(ApartmentRentalDbContext db) => Data = db;
+        protected DataRepository(TDbContext db) => this.Data = db;
 
-        public ApartmentRentalDbContext Data { get; }
+        protected TDbContext Data { get; }
 
-        public IQueryable<TEntity> All() => Data.Set<TEntity>();
+        protected IQueryable<TEntity> All() => this.Data.Set<TEntity>();
 
         public async Task Save(
             TEntity entity,
             CancellationToken cancellationToken = default)
         {
-            Data.Add(entity);
+            this.Data.Update(entity);
 
-            await Data.SaveChangesAsync(cancellationToken);
+            await this.Data.SaveChangesAsync(cancellationToken);
         }
     }
 }

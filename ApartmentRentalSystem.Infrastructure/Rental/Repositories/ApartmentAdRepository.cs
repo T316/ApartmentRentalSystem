@@ -13,11 +13,11 @@
     using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
 
-    internal class ApartmentAdRepository : DataRepository<ApartmentAd>, IApartmentAdRepository
+    internal class ApartmentAdRepository : DataRepository<IRentalDbContext, ApartmentAd>, IApartmentAdRepository
     {
         private readonly IMapper mapper;
 
-        public ApartmentAdRepository(ApartmentRentalDbContext db, IMapper mapper)
+        public ApartmentAdRepository(IRentalDbContext db, IMapper mapper)
             : base(db)
             => this.mapper = mapper;
 

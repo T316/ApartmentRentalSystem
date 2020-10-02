@@ -1,4 +1,4 @@
-﻿namespace ApartmentRentalSystem.Infrastructure.Common.Persistence
+﻿namespace ApartmentRentalSystem.Infrastructure.Common
 {
     public interface IInitializer
     {

@@ -10,9 +10,9 @@
     using ApartmentRentalSystem.Application.Rental.Brokers;
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
 
-    internal class BrokerRepository : DataRepository<Broker>, IBrokerRepository
+    internal class BrokerRepository : DataRepository<IRentalDbContext, Broker>, IBrokerRepository
     {
-        public BrokerRepository(ApartmentRentalDbContext db)
+        public BrokerRepository(IRentalDbContext db)
             : base(db)
         {
         }

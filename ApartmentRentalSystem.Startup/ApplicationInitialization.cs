@@ -1,6 +1,6 @@
 ﻿namespace ApartmentRentalSystem.Startup
 {
-    using ApartmentRentalSystem.Infrastructure.Common.Persistence;
+    using ApartmentRentalSystem.Infrastructure.Common;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
 
