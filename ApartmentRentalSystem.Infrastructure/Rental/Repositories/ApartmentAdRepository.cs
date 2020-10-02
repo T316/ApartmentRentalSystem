@@ -12,6 +12,8 @@
     using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
     using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Details;
 
     internal class ApartmentAdRepository : DataRepository<IRentalDbContext, ApartmentAd>, IApartmentAdRepository
     {
@@ -45,6 +47,13 @@
                 Data
                 .Neighborhoods
                 .FirstOrDefaultAsync(m => m.Name == neighborhood, cancellationToken);
+
+        public async Task<ApartmentAdDetailsOutputModel> GetDetails(int id, CancellationToken cancellationToken = default)
+            => await this.mapper
+                .ProjectTo<ApartmentAdDetailsOutputModel>(this
+                    .AllAvailable()
+                    .Where(c => c.Id == id))
+                .FirstOrDefaultAsync(cancellationToken);
 
         public async Task<int> Total(CancellationToken cancellationToken = default)
             => await

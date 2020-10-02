@@ -1,4 +1,4 @@
-﻿namespace ApartmentRentalSystem.Domain.Dealerships.Events.Dealers
+﻿namespace ApartmentRentalSystem.Domain.Brokerships.Events.Brokers
 {
     using Common;
 

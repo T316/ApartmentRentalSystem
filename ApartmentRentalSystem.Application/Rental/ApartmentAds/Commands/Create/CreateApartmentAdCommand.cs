@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
 
     using ApartmentRentalSystem.Application.Common.Contracts;
-    using ApartmentRentalSystem.Application.Features.ApartmentAds;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
     using ApartmentRentalSystem.Application.Rental.Brokers;
     using ApartmentRentalSystem.Domain.Common.Models;
     using ApartmentRentalSystem.Domain.Rental.Factories.ApartmentAds;

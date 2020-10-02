@@ -1,8 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Application.Rental.ApartmentAds.Commands.Create
 {
     using System;
-
-    using ApartmentRentalSystem.Application.Features.ApartmentAds;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
     using ApartmentRentalSystem.Domain.Common.Models;
     using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
     using FluentValidation;

@@ -2,7 +2,7 @@
 {
     using System;
     using System.Reflection;
-
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
     using ApartmentRentalSystem.Infrastructure.Common.Persistence;
     using ApartmentRentalSystem.Infrastructure.Rental;
     using Application.Features.ApartmentAds;

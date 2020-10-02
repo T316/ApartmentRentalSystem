@@ -2,9 +2,9 @@
 {
     using System.Linq;
 
-    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
     using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
     using ApartmentRentalSystem.Domain.Rental.Models.Brokers;
+    using Application.Features.ApartmentAds.Queries.Search;
     using FluentAssertions;
     using MyTested.AspNetCore.Mvc;
     using Web.Features;

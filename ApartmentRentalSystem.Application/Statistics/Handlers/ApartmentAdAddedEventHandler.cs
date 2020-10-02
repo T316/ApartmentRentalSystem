@@ -2,7 +2,7 @@
 {
     using System.Threading.Tasks;
     using Common;
-    using Domain.Dealerships.Events.Dealers;
+    using Domain.Brokerships.Events.Brokers;
 
     public class ApartmentAdAddedEventHandler : IEventHandler<ApartmentAdAddedEvent>
     {

@@ -1,9 +1,8 @@
-﻿namespace ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search
+﻿namespace ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search
 {
     using System.Threading;
     using System.Threading.Tasks;
-
-    using ApartmentRentalSystem.Application.Features.ApartmentAds;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
     using ApartmentRentalSystem.Domain.Rental.Specifications.ApartmentAds;
     using MediatR;
 
@@ -27,18 +26,18 @@
                 => this.apartmentAdRepository = apartmentAdRepository;
 
             public async Task<SearchApartmentAdsOutputModel> Handle
-                (SearchApartmentAdsQuery request,
+                (SearchApartmentAdsQuery request, 
                 CancellationToken cancellationToken)
             {
                 var apartmentAdSpecification = new ApartmentAdByNeighborhoodSpecification(request.Neighborhood)
                    .And(new ApartmentAdByCategorySpecification(request.Category))
                    .And(new ApartmentAdByPricePerDaySpecification(request.MinPricePerMonth, request.MaxPricePerMonth));
 
-                var apartmentAdListings = await apartmentAdRepository.GetApartmentAdListings(
+                var apartmentAdListings = await this.apartmentAdRepository.GetApartmentAdListings(
                     apartmentAdSpecification,
                     cancellationToken);
 
-                var totalApartmentAds = await apartmentAdRepository.Total(cancellationToken);
+                var totalApartmentAds = await this.apartmentAdRepository.Total(cancellationToken);
 
                 return new SearchApartmentAdsOutputModel(apartmentAdListings, totalApartmentAds);
             }

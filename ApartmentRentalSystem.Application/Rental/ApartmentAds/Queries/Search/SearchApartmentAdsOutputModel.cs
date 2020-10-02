@@ -1,13 +1,14 @@
-﻿namespace ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search
+﻿namespace ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search
 {
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
     using System.Collections.Generic;
 
     public class SearchApartmentAdsOutputModel
     {
         internal SearchApartmentAdsOutputModel(IEnumerable<ApartmentAdListingModel> apartmentAds, int total)
         {
-            ApartmentAds = apartmentAds;
-            Total = total;
+            this.ApartmentAds = apartmentAds;
+            this.Total = total;
         }
 
         public IEnumerable<ApartmentAdListingModel> ApartmentAds { get; }

@@ -1,6 +1,6 @@
 ﻿namespace ApartmentRentalSystem.Startup
 {
-    using ApartmentRentalSystem.Application.Features.ApartmentAds;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds;
     using ApartmentRentalSystem.Domain.Rental.Factories.ApartmentAds;
     using ApartmentRentalSystem.Infrastructure.Identity;
     using MediatR;
