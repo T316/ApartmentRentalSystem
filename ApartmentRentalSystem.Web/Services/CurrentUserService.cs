@@ -3,7 +3,7 @@
     using System;
     using System.Security.Claims;
 
-    using ApartmentRentalSystem.Application.Contracts;
+    using ApartmentRentalSystem.Application.Common.Contracts;
     using Microsoft.AspNetCore.Http;
 
     public class CurrentUserService : ICurrentUser

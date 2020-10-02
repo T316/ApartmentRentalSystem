@@ -1,8 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Domain
 {
     using ApartmentRentalSystem.Domain.Common;
-    using ApartmentRentalSystem.Domain.Factories;
-    using ApartmentRentalSystem.Domain.Models.ApartmentAds;
+    using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
     using Microsoft.Extensions.DependencyInjection;
 
     public static class DomainConfiguration

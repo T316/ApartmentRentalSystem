@@ -4,7 +4,8 @@
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
     using System.Text;
-    using Application;
+
+    using ApartmentRentalSystem.Application.Common;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
 

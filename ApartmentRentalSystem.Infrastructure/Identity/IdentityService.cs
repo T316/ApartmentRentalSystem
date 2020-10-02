@@ -2,9 +2,11 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
-    using Application;
-    using Application.Features.Identity;
-    using Application.Features.Identity.Commands.LoginUser;
+
+    using ApartmentRentalSystem.Application.Common;
+    using ApartmentRentalSystem.Application.Identity;
+    using ApartmentRentalSystem.Application.Identity.Commands;
+    using ApartmentRentalSystem.Application.Identity.Commands.LoginUser;
     using Microsoft.AspNetCore.Identity;
 
     internal class IdentityService : IIdentity

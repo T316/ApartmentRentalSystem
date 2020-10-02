@@ -1,7 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Domain
 {
-    using Factories.ApartmentAds;
-    using Factories.Brokers;
+    using ApartmentRentalSystem.Domain.Rental.Factories.ApartmentAds;
+    using ApartmentRentalSystem.Domain.Rental.Factories.Brokers;
     using FluentAssertions;
     using Microsoft.Extensions.DependencyInjection;
     using Xunit;

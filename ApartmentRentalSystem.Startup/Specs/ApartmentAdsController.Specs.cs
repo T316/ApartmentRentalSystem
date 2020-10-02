@@ -1,10 +1,10 @@
 ﻿namespace ApartmentRentalSystem.Startup.Specs
 {
     using System.Linq;
-    using ApartmentRentalSystem.Domain.Models.Brokers;
-    using Application.Features.ApartmentAds.Queries.Search;
-    using Domain.Models.ApartmentAds;
-    using FakeItEasy;
+
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
+    using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
+    using ApartmentRentalSystem.Domain.Rental.Models.Brokers;
     using FluentAssertions;
     using MyTested.AspNetCore.Mvc;
     using Web.Features;

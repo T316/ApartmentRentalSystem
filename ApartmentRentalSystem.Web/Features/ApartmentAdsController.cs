@@ -2,10 +2,10 @@
 {
     using System.Threading.Tasks;
 
-    using ApartmentRentalSystem.Application.Features.ApartmentAds.Queries.Search;
-    using ApartmentRentalSystem.Application.Features.ApartmentAds.Commands.Create;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Commands.Create;
+    using ApartmentRentalSystem.Application.Rental.ApartmentAds.Queries.Search;
 
     [ApiController]
     [Route("[controller]")]

@@ -1,7 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Web
 {
-    using ApartmentRentalSystem.Application;
-    using ApartmentRentalSystem.Application.Contracts;
+    using ApartmentRentalSystem.Application.Common;
+    using ApartmentRentalSystem.Application.Common.Contracts;
     using ApartmentRentalSystem.Web.Services;
     using FluentValidation.AspNetCore;
     using Microsoft.AspNetCore.Mvc;

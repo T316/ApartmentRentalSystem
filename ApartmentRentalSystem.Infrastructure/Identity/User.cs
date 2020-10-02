@@ -1,8 +1,8 @@
 ﻿namespace ApartmentRentalSystem.Infrastructure.Identity
 {
-    using ApartmentRentalSystem.Application.Features.Identity;
-    using ApartmentRentalSystem.Domain.Exceptions;
-    using ApartmentRentalSystem.Domain.Models.Brokers;
+    using ApartmentRentalSystem.Application.Identity;
+    using ApartmentRentalSystem.Domain.Rental.Exceptions;
+    using ApartmentRentalSystem.Domain.Rental.Models.Brokers;
     using Microsoft.AspNetCore.Identity;
 
     public class User : IdentityUser, IUser

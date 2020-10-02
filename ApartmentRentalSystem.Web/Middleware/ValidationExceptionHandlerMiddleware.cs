@@ -4,8 +4,8 @@
     using System.Net;
     using System.Threading.Tasks;
 
-    using Application.Exceptions;
-    using Domain.Exceptions;
+    using ApartmentRentalSystem.Application.Common.Exceptions;
+    using ApartmentRentalSystem.Domain.Common;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
     using Newtonsoft.Json;

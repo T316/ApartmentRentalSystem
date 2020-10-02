@@ -1,7 +1,8 @@
 ﻿namespace ApartmentRentalSystem.Application
 {
     using System.Reflection;
-    using ApartmentRentalSystem.Application.Behaviours;
+    using ApartmentRentalSystem.Application.Common;
+    using ApartmentRentalSystem.Application.Common.Behaviours;
     using AutoMapper;
     using MediatR;
     using Microsoft.Extensions.Configuration;

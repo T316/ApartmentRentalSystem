@@ -1,10 +1,11 @@
 ﻿namespace ApartmentRentalSystem.Infrastructure
 {
     using System.Text;
-    using ApartmentRentalSystem.Infrastructure.Persistence.Repositories;
-    using Application;
-    using Application.Contracts;
-    using Application.Features.Identity;
+
+    using ApartmentRentalSystem.Application.Common;
+    using ApartmentRentalSystem.Application.Common.Contracts;
+    using ApartmentRentalSystem.Application.Identity;
+    using ApartmentRentalSystem.Infrastructure.Common.Persistence;
     using Identity;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Identity;
@@ -12,7 +13,6 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
-    using Persistence;
 
     public static class InfrastructureConfiguration
     {

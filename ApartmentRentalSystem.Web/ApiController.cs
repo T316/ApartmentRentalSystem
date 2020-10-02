@@ -3,10 +3,10 @@
     using System.Threading.Tasks;
 
     using MediatR;
-    using ApartmentRentalSystem.Application;
     using ApartmentRentalSystem.Web.Common;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
+    using ApartmentRentalSystem.Application.Common;
 
     public abstract class ApiController : ControllerBase
     {

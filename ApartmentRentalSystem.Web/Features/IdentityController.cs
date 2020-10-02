@@ -3,9 +3,9 @@
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
-    using Application.Features.Identity;
-    using ApartmentRentalSystem.Application.Features.Identity.Commands.LoginUser;
-    using ApartmentRentalSystem.Application.Features.Identity.Commands.CreateUser;
+    using ApartmentRentalSystem.Application.Identity.Commands.CreateUser;
+    using ApartmentRentalSystem.Application.Identity.Commands.LoginUser;
+    using ApartmentRentalSystem.Application.Identity;
 
     [ApiController]
     [Route("[controller]")]

@@ -1,7 +1,7 @@
 ﻿namespace ApartmentRentalSystem.Startup.Specs
 {
-    using Application.Features.Identity.Commands.CreateUser;
-    using Application.Features.Identity.Commands.LoginUser;
+    using ApartmentRentalSystem.Application.Identity.Commands.CreateUser;
+    using ApartmentRentalSystem.Application.Identity.Commands.LoginUser;
     using FluentAssertions;
     using Infrastructure.Identity;
     using MyTested.AspNetCore.Mvc;
