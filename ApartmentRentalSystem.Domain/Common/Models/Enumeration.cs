@@ -49,6 +49,19 @@
         public static string NameFromValue<T>(int value) where T : Enumeration
             => FromValue<T>(value).Name;
 
+        public static bool HasValue<T>(int value) where T : Enumeration
+        {
+            try
+            {
+                FromValue<T>(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private static T Parse<T, TValue>(TValue value, string description, Func<T, bool> predicate) where T : Enumeration
         {
             var matchingItem = GetAll<T>().FirstOrDefault(predicate);

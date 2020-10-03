@@ -99,7 +99,7 @@
             return this;
         }
 
-        public ApartmentAd UpdatepricePerMonth(decimal pricePerMonth)
+        public ApartmentAd UpdatePricePerMonth(decimal pricePerMonth)
         {
             ValidatepricePerMonth(pricePerMonth);
             PricePerMonth = pricePerMonth;

@@ -12,6 +12,10 @@
 
     public interface IApartmentAdRepository : IRepository<ApartmentAd>
     {
+        Task<ApartmentAd> Find(int id, CancellationToken cancellationToken = default);
+
+        Task<bool> Delete(int id, CancellationToken cancellationToken = default);
+
         Task<IEnumerable<ApartmentAdListingModel>> GetApartmentAdListings(
             Specification<ApartmentAd> spefication,
             CancellationToken cancellationToken = default);

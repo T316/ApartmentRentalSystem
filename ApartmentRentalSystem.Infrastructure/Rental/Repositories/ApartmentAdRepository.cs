@@ -6,7 +6,6 @@
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
-    using Application.Features.ApartmentAds;
     using AutoMapper;
     using ApartmentRentalSystem.Domain.Common;
     using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
@@ -22,6 +21,28 @@
         public ApartmentAdRepository(IRentalDbContext db, IMapper mapper)
             : base(db)
             => this.mapper = mapper;
+
+        public async Task<ApartmentAd> Find(int id, CancellationToken cancellationToken = default)
+            => await this
+                .All()
+                .Include(c => c.Neighborhood)
+                .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+
+        public async Task<bool> Delete(int id, CancellationToken cancellationToken = default)
+        {
+            var apartmentAd = await this.Data.ApartmentAds.FindAsync(id);
+
+            if (apartmentAd == null)
+            {
+                return false;
+            }
+
+            this.Data.ApartmentAds.Remove(apartmentAd);
+
+            await this.Data.SaveChangesAsync(cancellationToken);
+
+            return true;
+        }
 
         public async Task<IEnumerable<ApartmentAdListingModel>> GetApartmentAdListings(
             Specification<ApartmentAd> specification,
