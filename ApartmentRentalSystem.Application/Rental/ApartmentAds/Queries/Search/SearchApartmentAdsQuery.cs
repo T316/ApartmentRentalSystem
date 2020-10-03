@@ -31,7 +31,7 @@
             {
                 var apartmentAdSpecification = new ApartmentAdByNeighborhoodSpecification(request.Neighborhood)
                    .And(new ApartmentAdByCategorySpecification(request.Category))
-                   .And(new ApartmentAdByPricePerDaySpecification(request.MinPricePerMonth, request.MaxPricePerMonth));
+                   .And(new ApartmentAdByPricePerMonthSpecification(request.MinPricePerMonth, request.MaxPricePerMonth));
 
                 var apartmentAdListings = await this.apartmentAdRepository.GetApartmentAdListings(
                     apartmentAdSpecification,

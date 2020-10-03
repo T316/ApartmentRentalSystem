@@ -6,12 +6,12 @@
     using ApartmentRentalSystem.Domain.Common;
     using ApartmentRentalSystem.Domain.Rental.Models.ApartmentAds;
 
-    public class ApartmentAdByPricePerDaySpecification : Specification<ApartmentAd>
+    public class ApartmentAdByPricePerMonthSpecification : Specification<ApartmentAd>
     {
         private readonly decimal minPrice;
         private readonly decimal maxPrice;
 
-        public ApartmentAdByPricePerDaySpecification(
+        public ApartmentAdByPricePerMonthSpecification(
             decimal? minPrice = default,
             decimal? maxPrice = decimal.MaxValue)
         {
